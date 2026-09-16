@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Environment files (never commit secrets)
+.env
+
+# Build outputs
+dist/
+
+# Prisma generated
+# (keep generated types but exclude binary engines)
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage/

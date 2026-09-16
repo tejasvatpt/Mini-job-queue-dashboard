@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum JobStatus {
+  pending
+  running
+  completed
+  failed
+}
+
+model Job {
+  id        String    @id @default(uuid())
+  title     String    @db.VarChar(200)
+  type      String    @db.VarChar(100)
+  status    JobStatus @default(pending)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@map("jobs")
+}
